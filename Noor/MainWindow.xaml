@@ -1,0 +1,23 @@
+﻿<Window x:Class="Noor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="http://www.hardcodet.net/taskbar"
+        xmlns:local="clr-namespace:Noor"
+        mc:Ignorable="d"
+        Title="NailOptimizator" Padding="20" Height="450" Width="800" Closing="Window_Closing">
+    <Grid>
+        <CheckBox x:Name="AddContextMenu" Click="AddContextMenu_Click" Content="Добавить в контекстное меню" Margin="10,10,0,39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="204" Height="20" />
+        <CheckBox x:Name="AddTry"  Content="Открывать программу  в трее" Margin="10,35,0,36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="190" Click="AddTry_Click" Height="20" />
+        <p:TaskbarIcon TrayLeftMouseDown="TheTry_TrayLeftMouseDown" x:Name="TheTry" Visibility="Hidden" ToolTipText="Nail Optimizator" IconSource="unnamed.ico"   MenuActivation="LeftOrRightClick" >
+            <p:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Открыть" Click="MenuItem_Click_1"></MenuItem>
+                    <MenuItem Header="Закрыть" Click="MenuItem_Click"></MenuItem>
+                </ContextMenu>
+            </p:TaskbarIcon.ContextMenu>
+        </p:TaskbarIcon>
+        
+    </Grid>
+</Window>
